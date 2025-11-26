@@ -1,81 +1,51 @@
-/* ==============================
-   VIRTUAL HERBAL GARDEN - QUIZ PAGE (Final Polished)
-   Fresh Green Theme • Smooth Shadows • Minimal Glow
-============================== */
-
-/* ---------- General ---------- */
+/* -----------------
+   General Body & Navbar
+------------------ */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
-  background: #f7fff7;
+  background: #f0fff0;
   color: #333;
-  transition: background 0.3s ease;
 }
 
-h1, h2, h3 {
-  color: #1b5e20;
-  font-weight: 600;
-}
-
-/* ---------- Navbar ---------- */
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   background: #2e7d32;
-  padding: 14px 40px;
+  padding: 15px 40px;
   color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.navbar h2 {
-  font-size: 1.3rem;
-  margin: 0;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 20px;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar ul li a {
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
+  font-weight: bold;
 }
 
-.navbar ul li a:hover,
 .navbar ul li a.active {
   color: #c8e6c9;
 }
 
-/* ---------- Section Layout ---------- */
+/* -----------------
+   Page & Cards
+------------------ */
 .page {
   min-height: 100vh;
-  padding: 50px 20px;
+  padding: 40px 20px;
+  display: none;
   text-align: center;
-  animation: fadeIn 0.4s ease-in-out;
 }
 
-.page h1 {
-  font-size: 2.3rem;
-  margin-bottom: 10px;
+#home {
+  display: block;
 }
 
-.page p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-/* ---------- Card Section ---------- */
 .card-container {
   display: flex;
   justify-content: center;
@@ -86,18 +56,13 @@ h1, h2, h3 {
 
 .card {
   background: #fff;
-  border-radius: 16px;
-  padding: 25px;
-  width: 260px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
   text-align: center;
-  transition: all 0.3s ease;
+  width: 250px;
   cursor: pointer;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
 .card img {
@@ -106,64 +71,73 @@ h1, h2, h3 {
   margin-bottom: 1rem;
 }
 
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+}
+
 .card h3 {
+  margin: 0.5rem 0;
   color: #2e7d32;
-  margin-bottom: 8px;
 }
 
 .card p {
+  font-size: 0.9rem;
   color: #555;
-  font-size: 0.95rem;
 }
 
-/* ---------- Back Button ---------- */
+/* -----------------
+   Back Button
+------------------ */
 .back-btn {
   background: #2e7d32;
   color: #fff;
   border: none;
-  padding: 10px 22px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 600;
-  margin-bottom: 25px;
-  transition: all 0.3s ease;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .back-btn:hover {
   background: #1b5e20;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* ---------- Quiz Containers ---------- */
+/* -----------------
+   Quiz Container
+------------------ */
 #mcq, #image, #jumbled {
   max-width: 900px;
   margin: 0 auto;
   background: #fff;
-  border-radius: 14px;
+  border-radius: 15px;
   padding: 30px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
   text-align: left;
 }
 
-/* ---------- MCQ Quiz ---------- */
+/* -----------------
+   MCQ Card Styling
+------------------ */
 .quiz-question {
+  margin-bottom: 20px;
   background: #e8f5e9;
   border-radius: 12px;
   padding: 15px;
-  margin-bottom: 18px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .quiz-question:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
 }
 
 .quiz-option {
   display: block;
-  width: 90%;
+  width: 100%;
   background: #a5d6a7;
   color: #1b5e20;
   border: none;
@@ -171,9 +145,7 @@ h1, h2, h3 {
   border-radius: 8px;
   margin: 6px 0;
   cursor: pointer;
-  font-weight: 500;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  text-align: left;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .quiz-option:hover {
@@ -181,13 +153,7 @@ h1, h2, h3 {
   color: #fff;
 }
 
-.quiz-option.selected {
-  background: #43a047;
-  color: #fff;
-  transform: scale(1.02);
-}
-
-/* Correct/Incorrect highlights */
+/* Correct/Incorrect Highlights */
 .correct {
   background-color: #c8e6c9 !important;
   border: 2px solid #2e7d32;
@@ -198,95 +164,200 @@ h1, h2, h3 {
   border: 2px solid #c62828;
 }
 
-/* ---------- Image / Jumbled Questions ---------- */
+/* -----------------
+   Image Quiz Styling
+------------------ */
 .image-question, .jumbled-question {
-  background: #f1f8f6;
+  margin-bottom: 20px;
+  background: #e8f5e9;
   border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 18px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 15px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
 }
 
 .image-question img {
-  max-width: 250px;
-  border-radius: 10px;
-  border: 3px solid #a5d6a7;
-  margin-bottom: 12px;
+  margin: 10px 0;
+  border: 3px solid #c8e6c9;
+  border-radius: 12px;
+  max-width: 100%;
   display: block;
-  object-fit: contain;
 }
 
 .image-question input,
 .jumbled-question input {
-  width: 100%;
-  max-width: 320px;
   padding: 10px;
   border: 2px solid #81c784;
   border-radius: 8px;
-  font-size: 1rem;
-  margin-bottom: 10px;
-  outline: none;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+  margin-right: 8px;
+  width: calc(100% - 120px);
+  max-width: 300px;
 }
 
-.image-question input:focus,
-.jumbled-question input:focus {
-  border-color: #2e7d32;
-  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.25);
-}
-
-/* ---------- Submit Buttons ---------- */
-#submit-mcq, #submit-image, #submit-jumbled {
-  background: #43a047;
-  color: white;
+.image-question button,
+.jumbled-question button {
+  background: #388e3c;
+  color: #fff;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.image-question button:hover,
+.jumbled-question button:hover {
+  background: #2e7d32;
+}
+
+.jumbled-question strong {
+  color: #1b5e20;
+  font-size: 1.2rem;
+}
+/* -----------------
+   Image Quiz Card Styling
+------------------ */
+.image-question {
+  margin-bottom: 20px;
+  background: #e0f2f1; /* light green background */
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-question:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
+
+.image-question img {
+  max-width: 250px;  /* smaller and uniform width */
+  max-height: 200px; /* control height */
+  width: auto;
+  height: auto;
+  border: 3px solid #81c784;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  object-fit: contain; /* keeps aspect ratio */
+}
+
+.image-question input {
+  padding: 10px;
+  border: 2px solid #388e3c;
+  border-radius: 8px;
+  width: 70%;
+  max-width: 250px;
+  margin-bottom: 10px;
+}
+
+.image-question button {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.image-question button:hover {
+  background: #1b5e20;
+}
+/* -----------------
+   Quiz Card Layout - Left Alignment
+------------------ */
+.quiz-question, .image-question, .jumbled-question {
+  background: #e8f5e9;             
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align content to the left */
+  text-align: left;
+}
+
+.quiz-question:hover, .image-question:hover, .jumbled-question:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
+
+/* MCQ Options */
+.quiz-option {
+  display: block;
+  width: 90%;
+  max-width: 300px;
+  background: #a5d6a7;
+  color: #1b5e20;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin: 6px 0;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  text-align: left; /* Align option text to left */
+}
+
+/* Image & Jumbled Inputs */
+.image-question input, .jumbled-question input {
+  padding: 10px;
+  border: 2px solid #388e3c;
+  border-radius: 8px;
+  width: 70%;
+  max-width: 300px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  text-align: left; /* Input text left-aligned */
+}
+
+/* Image */
+.image-question img {
+  max-width: 250px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  border: 3px solid #81c784;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  object-fit: contain;
+  align-self: center; /* Keep image centered in card */
+}
+/* -----------------
+   Submit Button Styling (All Sections)
+------------------ */
+#submit-mcq, #submit-image, #submit-jumbled {
+  background: #4caf50;          /* green shade */
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
   font-size: 1rem;
   border-radius: 10px;
-  font-weight: 600;
   cursor: pointer;
+  font-weight: bold;
   margin-top: 15px;
+  align-self: flex-end;          /* move button to bottom right of card */
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
 }
 
 #submit-mcq:hover, #submit-image:hover, #submit-jumbled:hover {
-  background: #2e7d32;
+  background: #388e3c;          /* darker green on hover */
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.25);
 }
 
-/* ---------- Score Section ---------- */
+/* Score Display */
 #mcq-score, #image-score, #jumbled-score {
-  margin-top: 20px;
-  font-weight: 600;
+  margin-top: 15px;
+  font-weight: bold;
   color: #2e7d32;
-  text-align: center;
   font-size: 1.1rem;
-}
-
-/* ---------- Animations ---------- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ---------- Responsive Design ---------- */
-@media (max-width: 768px) {
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 85%;
-  }
-
-  #mcq, #image, #jumbled {
-    padding: 20px;
-  }
-
-  .image-question img {
-    max-width: 100%;
-  }
+  text-align: center;
 }

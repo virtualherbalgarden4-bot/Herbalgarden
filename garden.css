@@ -1,16 +1,17 @@
 /* ================== GARDEN / PLANT CARDS ================== */
+
+/* Garden Section */
 #garden {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   padding: 50px 30px;
   background: linear-gradient(135deg, #f9fff9, #e8f5e9);
-  transition: all 0.3s ease-in-out;
 }
 
 /* Plant Card */
 .plant-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 18px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   padding: 25px;
@@ -48,7 +49,7 @@
 .plant-card p {
   font-size: 0.95rem;
   color: #333;
-  line-height: 1.5;
+  line-height: 1.4;
   margin: 5px 0;
 }
 .plant-card p strong {
@@ -56,7 +57,7 @@
   font-weight: 600;
 }
 
-/* Category Tag */
+/* Subtle Category Styling */
 .plant-card .category {
   display: inline-block;
   background: #c8e6c9;
@@ -67,12 +68,7 @@
   margin-top: 8px;
 }
 
-/* ================== FILTER BAR ================== */
-.filter-bar {
-  text-align: center;
-  padding: 20px;
-  background: #f1f8f6;
-}
+/* Filter Buttons */
 .filter-btn {
   background: #e8f5e9;
   border: none;
@@ -99,15 +95,19 @@
 }
 
 /* ================== MODAL ================== */
+/* ================== MODAL ================== */
 .modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  inset: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
   background: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
-  animation: fadeIn 0.3s ease-in-out;
 }
 
 .modal-content {
@@ -118,12 +118,13 @@
   max-width: 800px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
   margin: 60px auto;
   position: relative;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Modal Body Layout */
+/* Flex layout for modal body */
 #modal-body {
   display: flex;
   flex-direction: row;
@@ -131,7 +132,7 @@
   flex-wrap: wrap;
 }
 
-/* Modal Left & Right */
+/* Left = Image, Right = Text/3D */
 .modal-left {
   flex: 1 1 45%;
 }
@@ -139,7 +140,7 @@
   flex: 1 1 50%;
 }
 
-/* Modal Image */
+/* Plant Image */
 .modal-img {
   width: 100%;
   height: 250px;
@@ -162,7 +163,7 @@
   color: #e53935;
 }
 
-/* Modal Text */
+/* Text Styles */
 .modal-content h2 {
   color: #1b5e20;
   margin-bottom: 10px;
@@ -180,12 +181,22 @@
   color: #333;
 }
 
-/* Tabs */
+/* Responsive: Stack layout on mobile */
+@media (max-width: 768px) {
+  #modal-body {
+    flex-direction: column;
+  }
+  .modal-left, .modal-right {
+    flex: 1 1 100%;
+  }
+}
+/* Tabs container */
 .modal-tabs {
   display: flex;
   border-bottom: 2px solid #ddd;
   margin-bottom: 15px;
 }
+
 .modal-tab {
   flex: 1;
   text-align: center;
@@ -195,6 +206,7 @@
   color: #555;
   transition: 0.3s;
 }
+
 .modal-tab.active {
   color: #1b5e20;
   border-bottom: 3px solid #2e7d32;
@@ -209,7 +221,7 @@
   animation: fadeIn 0.4s ease-in-out;
 }
 
-/* 3D Viewer */
+/* Small tweak for 3D viewer */
 .tab-content model-viewer {
   width: 100%;
   height: 300px;
@@ -217,18 +229,21 @@
   background: #f9f9f9;
 }
 
+
 /* ================== RESPONSIVE ================== */
 @media (max-width: 768px) {
-  #modal-body {
+  .navbar ul {
     flex-direction: column;
-  }
-  .modal-left,
-  .modal-right {
-    flex: 1 1 100%;
+    gap: 15px;
   }
   #garden {
     grid-template-columns: 1fr;
     padding: 20px;
+  }
+  #searchBar {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
   }
   .modal-content {
     margin: 50px 20px;
@@ -236,14 +251,23 @@
   }
 }
 
-/* ================== ANIMATIONS ================== */
+/* ================== ANIMATION ================== */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+/* Filter Bar */
+.filter-bar {
+  text-align: center;
+  padding: 20px;
+  background: #f1f8f6;
+}
+.filter-bar select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #2e7d32;
+  font-size: 1rem;
+  cursor: pointer;
+}
+

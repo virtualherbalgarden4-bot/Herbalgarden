@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Garden | Virtual Herbal Garden</title>
-  <link rel="stylesheet" href="common.css" />
-  <link rel="stylesheet" href="garden.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garden - Virtual Herbal Garden</title>
+   <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="garden.css">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
@@ -22,55 +22,54 @@
   </nav>
 
   <!-- Filter Section -->
-  <section class="filter-bar" aria-label="Filter plants by category">
+  <div id="filter" style="padding: 20px; text-align:center;">
     <button class="filter-btn active" data-category="All">All</button>
     <button class="filter-btn" data-category="Ayurveda">Ayurveda</button>
     <button class="filter-btn" data-category="Yoga">Yoga</button>
     <button class="filter-btn" data-category="Unani">Unani</button>
     <button class="filter-btn" data-category="Homeopathy">Homeopathy</button>
     <button class="filter-btn" data-category="Siddha">Siddha</button>
-  </section>
+  </div>
 
-  <!-- Garden Grid -->
+  <!-- Garden -->
   <main>
-    <section id="garden" aria-live="polite"></section>
+    <div id="garden"></div>
   </main>
 
   <!-- Modal -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div id="modal" class="modal">
     <div class="modal-content">
-      <button id="closeModal" class="close" aria-label="Close modal">&times;</button>
+      <span id="closeModal" class="close">&times;</span>
       <div id="modal-body"></div>
     </div>
   </div>
+  <!-- ===== Local Chatbot (insert before </body>) ===== -->
+<div id="chatbot">
+  <button id="chat-toggle" aria-label="Open chat">💬</button>
 
-  <!-- Chatbot -->
-  <div id="chatbot">
-    <button id="chat-toggle" aria-label="Open chat">💬</button>
-    <div id="chat-window" aria-hidden="true">
-      <div class="chat-header">
-        <div>
-          <strong>Herbal Assistant</strong>
-          <div class="chat-sub">Ask about plants, growth, or 3D models</div>
-        </div>
-        <button id="chat-close" aria-label="Close chat">✕</button>
+  <div id="chat-window" aria-hidden="true">
+    <div class="chat-header">
+      <div>
+        <strong>Herbal Assistant</strong>
+        <div class="chat-sub">Ask about plants, growth, or 3D models</div>
       </div>
+      <button id="chat-close" aria-label="Close chat">✕</button>
+    </div>
 
-      <div id="chat-messages" role="log" aria-live="polite"></div>
+    <div id="chat-messages" role="log" aria-live="polite"></div>
 
-      <div class="chat-controls">
-        <input
-          id="chat-input"
-          type="text"
-          placeholder="e.g. How to grow Tulsi? or list ayurveda plants"
-          aria-label="Chat input"
-        />
-        <button id="chat-send">Send</button>
-      </div>
+    <div class="chat-controls">
+      <input id="chat-input" type="text" placeholder="e.g. How to grow Tulsi? or list ayurveda plants" />
+      <button id="chat-send">Send</button>
+    </div>
 
-      <div class="chat-suggests" id="chat-suggests"></div>
+    <div class="chat-suggests" id="chat-suggests">
+      <!-- quick suggestion buttons inserted here -->
     </div>
   </div>
+</div>
+<!-- ===== end chatbot ===== -->
+
 
   <!-- Footer -->
   <footer>

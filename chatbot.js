@@ -1,4 +1,4 @@
-/* ===== AI + Local Chatbot Logic - chatbot.js ===== */
+/* ===== Local Chatbot Logic - chatbot.js ===== */
 (function() {
   const toggle = document.getElementById('chat-toggle');
   const win = document.getElementById('chat-window');
@@ -25,7 +25,7 @@
     return el;
   }
 
-  // Typing animation
+  // ====== Typing animation ======
   let typingEl = null;
   function showTyping() {
     typingEl = append("Herbal Assistant is typing<span class='dots'>...</span>", 'bot', 'typing');
@@ -35,7 +35,7 @@
     typingEl = null;
   }
 
-  // Quick suggestions
+  // quick suggestions
   const quicks = [
     "List ayurveda plants",
     "How to grow Tulsi",
@@ -50,7 +50,7 @@
     suggests.appendChild(b);
   });
 
-  // Open / close
+  // open / close
   toggle.addEventListener('click', () => {
     win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
     if (win.style.display === 'flex' && !messages.hasChildNodes()) {
@@ -59,70 +59,61 @@
   });
   closeBtn?.addEventListener('click', () => { win.style.display = 'none'; });
 
-  // Send
+  // send
   input.addEventListener('keydown', e => { if (e.key === 'Enter') send(); });
   sendBtn.addEventListener('click', send);
 
-  async function send() {
+  function send() {
     const text = input.value.trim();
     if (!text) return;
     append(text, 'user');
     input.value = '';
     showTyping();
-    await processInput(text);
+    setTimeout(() => {
+      hideTyping();
+      processInput(text);
+    }, 1000);
   }
 
-  // Main logic
-  async function processInput(text) {
+  // main logic
+  function processInput(text) {
     const q = text.toLowerCase();
     const byName = PLANTS.find(p => q.includes(p.name.toLowerCase()));
     if (byName) {
-      hideTyping();
       return append(`<strong>${byName.name}</strong> — ${byName.description}<br><strong>Soil:</strong> ${byName.soil} | <strong>Water:</strong> ${byName.water}`);
     }
     if (q.includes('list')) {
-      hideTyping();
       append("<strong>Available plants:</strong><br>" + PLANTS.map(p=>`• ${p.name}`).join('<br>'));
       return;
     }
     if (q.includes('immunity')) {
-      hideTyping();
       append("🌿 Plants that help immunity include Tulsi, Neem, and Amla.");
       return;
     }
 
-    // fallback → AI call
-    await getAIResponse(text);
+    // fallback for random questions (Part 2)
+    getAIResponse(q);
   }
 
-  // ===== AI via backend API =====
-  async function getAIResponse(userText) {
-    try {
-      const res = await fetch("http://localhost:5000/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userText })
-      });
-
-      const data = await res.json();
-      hideTyping();
-
-      if (data && data.reply) {
-        const safe = escapeHtml(data.reply).replace(/\n/g, '<br>');
-        append(safe);
-      } else {
-        append("Hmm 🤔 I didn't get a proper response. Try again in a moment.");
-      }
-    } catch (err) {
-      console.error(err);
-      hideTyping();
-      append("Sorry, I'm having trouble reaching my AI brain right now. 🌐");
+  // ====== Part 2: simple local AI fallback ======
+  function getAIResponse(q) {
+    // This is a basic keyword-based fallback. 
+    // You can extend it or replace it later with OpenAI API or a small LLM.
+    if (q.includes('hello') || q.includes('hi')) {
+      append("Hey there! 🌸 How can I assist with your herbal queries today?");
+    } 
+    else if (q.includes('thank')) {
+      append("You're most welcome 🌿!");
+    } 
+    else if (q.includes('help')) {
+      append("You can ask me things like:<br>• How to grow Tulsi<br>• List Ayurveda plants<br>• Soil for Neem");
+    } 
+    else {
+      append("Hmm 🤔 I don't have that info yet, but I'm learning! Try asking about a specific plant or topic.");
     }
   }
-  
 
-  // Prevent injection
-  function escapeHtml(s) { 
-    return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); 
-  }
+  // helpers
+  function escapeHtml(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
 })();

@@ -1,19 +1,17 @@
-// ================== PLANT DATA ==================
 const plants = [
   {
-    name: "Tulsi",
-    botanical: "Holy Basil",
-    scientific: "Ocimum tenuiflorum",
-    image: "images/tulsi.jpg",
-    model: "models/tulsi.glb",
-    soil: "Loamy, well-drained soil",
-    water: "Water every 2–3 days",
-    growth: "1–2 feet in 6–8 weeks",
-    category: "Ayurveda",
-    description:
-      "Tulsi is revered in Ayurveda for its medicinal properties. Used in herbal teas, immunity boosters, and traditional remedies. Worshipped in India for thousands of years as a sacred plant."
-  },
-  {
+  name: "Tulsi",
+  botanical: "Holy Basil",
+  scientific: "Ocimum tenuiflorum",
+  image: "images/tulsi.jpg",
+  model: "models/tulsi.glb",
+  soil: "Loamy, well-drained soil",
+  water: "Water every 2–3 days",
+  growth: "1–2 feet in 6–8 weeks",
+  category: "Ayurveda",
+  description: "Tulsi is revered in Ayurveda for its medicinal properties ,Tulsi has been worshipped in India for thousands of years as a sacred plant.,Used in herbal teas, immunity boosters, and traditional remedies."
+},
+{
     name: "Aloe Vera",
     botanical: "Aloe",
     scientific: "Aloe barbadensis miller",
@@ -23,8 +21,7 @@ const plants = [
     water: "Once every 2–3 weeks",
     growth: "Matures in 2–3 years",
     category: "Homeopathy",
-    description:
-      "Aloe Vera is a succulent known for its cooling medicinal gel used in skincare and healing. Applied to burns, wounds, and skin problems; also used in juices for digestion."
+    description: "Aloe Vera is a succulent known for its medicinal gel used in skincare and healing.,Used in ancient Egypt as the 'plant of immortality' and widely cultivated across tropical regions.,Applied to burns, wounds, and skin problems; also used in juices for digestion."
   },
   {
     name: "Chamomile",
@@ -36,8 +33,7 @@ const plants = [
     water: "Moderate watering",
     growth: "Flowers in 8–10 weeks",
     category: "Unani",
-    description:
-      "Chamomile is a small daisy-like plant valued for calming and anti-inflammatory properties. Used in ancient Greece and Rome for relaxation and medicine."
+    description: "Chamomile is a small daisy-like plant valued for calming and anti-inflammatory properties.,Used in ancient Egypt, Greece, and Rome for medicine and relaxation.,Chamomile tea for relaxation, stress relief, sleep aid, and skin care."
   },
   {
     name: "Rose",
@@ -49,8 +45,7 @@ const plants = [
     water: "Every alternate day",
     growth: "Blooms in 8–12 weeks",
     category: "Ayurveda",
-    description:
-      "Roses are cherished for their beauty, fragrance, and healing properties. Rose water is used for skincare, perfumes, and cooling remedies in Ayurveda."
+    description: "Roses are aromatic flowers cherished for beauty, fragrance, and healing qualities.,Cultivated for over 5,000 years in Persia and India for perfumes and medicine.,Rose water for skin, perfumes, and as a cooling agent in Ayurveda."
   },
   {
     name: "Basil",
@@ -62,8 +57,7 @@ const plants = [
     water: "Keep soil moist",
     growth: "Harvestable in 4–6 weeks",
     category: "Ayurveda",
-    description:
-      "Sweet Basil is both a culinary and medicinal herb. Used in cooking, teas, and remedies for digestion and colds."
+    description: "Sweet Basil is a culinary and medicinal herb with strong aromatic properties.,Originated in India over 4,000 years ago, later spreading to Europe and the Mediterranean.,Used in cooking, herbal teas, and remedies for digestion and colds."
   },
   {
     name: "Lavender",
@@ -75,8 +69,7 @@ const plants = [
     water: "Water weekly",
     growth: "Blooms in 2–3 months",
     category: "Homeopathy",
-    description:
-      "Lavender is prized for relaxation and skin healing. Essential oil used in perfumes, skin care, and aromatherapy."
+    description: "Lavender is an aromatic herb prized for relaxation and skin healing.,Used in Roman baths and Egyptian mummification rituals.,Essential oil for relaxation, perfumes, skin care, and insect repellent."
   },
   {
     name: "Mint",
@@ -88,8 +81,7 @@ const plants = [
     water: "Regular watering",
     growth: "Spreads quickly in 6–8 weeks",
     category: "Ayurveda",
-    description:
-      "Mint is a refreshing herb with cooling and digestive properties. Commonly used in teas, remedies, and oral care."
+    description: "Mint is a refreshing herb known for cooling properties and culinary uses.,Traced back to ancient Greece and Egypt for medicinal and culinary purposes.,Used in teas, digestion remedies, oral care, and flavoring."
   },
   {
     name: "Neem",
@@ -101,8 +93,7 @@ const plants = [
     water: "Low water requirement",
     growth: "Tree grows up to 20 feet",
     category: "Ayurveda",
-    description:
-      "Neem is known as the 'village pharmacy' of India. Used for skincare, immunity, dental care, and organic pesticides."
+    description: "Neem is a multipurpose medicinal tree often called the 'village pharmacy'.,Used in India for over 2,000 years for health, agriculture, and cosmetics.,Neem oil for skin, leaves for immunity, and bark for dental care."
   },
   {
     name: "Ginger",
@@ -114,8 +105,7 @@ const plants = [
     water: "Keep soil moist",
     growth: "Harvest in 8–10 months",
     category: "Unani",
-    description:
-      "Ginger is a root spice used for flavor and medicinal benefits. Helps with colds, nausea, and digestion."
+    description: "Ginger is a root spice widely used for flavor and medicinal properties.,Originated in Southeast Asia; traded globally for thousands of years.,Used in teas, cooking, and remedies for colds, nausea, and digestion."
   },
   {
     name: "Ashwagandha",
@@ -127,8 +117,7 @@ const plants = [
     water: "Minimal watering",
     growth: "Harvest after 6 months",
     category: "Yoga",
-    description:
-      "Ashwagandha is an adaptogenic herb used for over 3,000 years in Ayurveda to improve vitality, reduce stress, and enhance stamina."
+    description: "Ashwagandha is an adaptogenic herb that helps the body manage stress.,Used in Ayurveda for over 3,000 years for vitality and strength.,Improves immunity, reduces stress, and enhances stamina."
   },
   {
     name: "Karisalankanni",
@@ -140,8 +129,7 @@ const plants = [
     water: "Regular watering",
     growth: "Matures in 2–3 months",
     category: "Siddha",
-    description:
-      "Karisalankanni supports liver health and hair growth, widely used in traditional Siddha medicine."
+    description: "Karisalankanni is a medicinal herb used in Siddha medicine for liver health.,Traditionally used in South India as a liver tonic and hair growth remedy.,Promotes liver health, hair growth, and improves skin condition."
   },
   {
     name: "Turmeric",
@@ -153,21 +141,77 @@ const plants = [
     water: "Moderate watering",
     growth: "Harvest in 8–10 months",
     category: "Ayurveda",
-    description:
-      "Turmeric is known for its anti-inflammatory and healing powers. Used for centuries in cooking, rituals, and skincare."
+    description: "Turmeric is a golden spice known for its anti-inflammatory and healing properties.,Used in India for over 4,000 years in cooking, rituals, and medicine.,Key ingredient in curries, remedies for inflammation, and skin care."
   }
 ];
 
-// ================== DOM ELEMENTS ==================
-const gardenDiv = document.getElementById("garden");
+
+// Modal elements
 const modal = document.getElementById("modal");
 const modalBody = document.getElementById("modal-body");
 const closeModal = document.getElementById("closeModal");
 
-// ================== DISPLAY PLANTS ==================
+function showModal(plant) {
+  modalBody.innerHTML = `
+    <div class="modal-left">
+      <img src="${plant.image}" alt="${plant.name}" class="modal-img">
+    </div>
+    <div class="modal-right">
+      <h2>${plant.name}</h2>
+      <p><strong>Botanical Name:</strong> ${plant.botanical}</p>
+      <p><strong>Scientific Name:</strong> <em>${plant.scientific}</em></p>
+
+      <!-- Tabs -->
+      <div class="modal-tabs">
+        <div class="modal-tab active" data-tab="details">Details</div>
+        <div class="modal-tab" data-tab="growth">Growth</div>
+        <div class="modal-tab" data-tab="model">3D View</div>
+      </div>
+
+      <!-- Tab Contents -->
+      <div id="details" class="tab-content active">
+        <p>${plant.description || "No description available."}</p>
+      </div>
+
+      <div id="growth" class="tab-content">
+        <ul>
+          <li><strong>Soil:</strong> ${plant.soil}</li>
+          <li><strong>Water:</strong> ${plant.water}</li>
+          <li><strong>Growth:</strong> ${plant.growth}</li>
+        </ul>
+      </div>
+
+      <div id="model" class="tab-content">
+        ${plant.model ? `
+          <model-viewer src="${plant.model}" alt="${plant.name}"
+            camera-controls auto-rotate>
+          </model-viewer>` 
+        : `<p><em>3D Model not available</em></p>`}
+      </div>
+    </div>
+  `;
+
+  modal.style.display = "flex";
+
+  // Tab Switching Logic
+  const tabs = modalBody.querySelectorAll(".modal-tab");
+  const contents = modalBody.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+
+      tab.classList.add("active");
+      modalBody.querySelector(`#${tab.dataset.tab}`).classList.add("active");
+    });
+  });
+}
+
+
 function displayPlants(list) {
   gardenDiv.innerHTML = "";
-  list.forEach((plant) => {
+  list.forEach(plant => {
     const card = document.createElement("div");
     card.className = "plant-card";
     card.innerHTML = `
@@ -182,89 +226,26 @@ function displayPlants(list) {
   });
 }
 
-// ================== MODAL ==================
-function showModal(plant) {
-  modalBody.innerHTML = `
-    <div class="modal-left">
-      <img src="${plant.image}" alt="${plant.name}" class="modal-img">
-    </div>
-    <div class="modal-right">
-      <h2 id="modalTitle">${plant.name}</h2>
-      <p><strong>Botanical Name:</strong> ${plant.botanical}</p>
-      <p><strong>Scientific Name:</strong> <em>${plant.scientific}</em></p>
-
-      <div class="modal-tabs">
-        <div class="modal-tab active" data-tab="details">Details</div>
-        <div class="modal-tab" data-tab="growth">Growth</div>
-        <div class="modal-tab" data-tab="model">3D View</div>
-      </div>
-
-      <div id="details" class="tab-content active">
-        <p>${plant.description}</p>
-      </div>
-      <div id="growth" class="tab-content">
-        <ul>
-          <li><strong>Soil:</strong> ${plant.soil}</li>
-          <li><strong>Water:</strong> ${plant.water}</li>
-          <li><strong>Growth:</strong> ${plant.growth}</li>
-        </ul>
-      </div>
-      <div id="model" class="tab-content">
-        ${
-          plant.model
-            ? `<model-viewer src="${plant.model}" alt="${plant.name}" camera-controls auto-rotate></model-viewer>`
-            : `<p><em>3D Model not available</em></p>`
-        }
-      </div>
-    </div>
-  `;
-
-  modal.style.display = "flex";
-  document.body.style.overflow = "hidden"; // Prevent background scroll
-
-  // Tab switching
-  const tabs = modalBody.querySelectorAll(".modal-tab");
-  const contents = modalBody.querySelectorAll(".tab-content");
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.classList.remove("active"));
-      contents.forEach((c) => c.classList.remove("active"));
-      tab.classList.add("active");
-      modalBody.querySelector(`#${tab.dataset.tab}`).classList.add("active");
-    });
-  });
-}
-
-// ================== CLOSE MODAL ==================
-function hideModal() {
-  modal.style.display = "none";
-  document.body.style.overflow = "auto";
-}
-
-closeModal.onclick = hideModal;
-window.onclick = (e) => {
-  if (e.target === modal) hideModal();
-};
-
-// Keyboard accessibility (ESC to close)
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modal.style.display === "flex") hideModal();
-});
-
-// ================== FILTER BUTTONS ==================
-document.querySelectorAll(".filter-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".filter-btn").forEach((b) =>
-      b.classList.remove("active")
-    );
-    btn.classList.add("active");
-
-    const category = btn.dataset.category;
-    if (category === "All") displayPlants(plants);
-    else displayPlants(plants.filter((p) => p.category === category));
-  });
-});
-
-// ================== INIT ==================
+// Init
+const gardenDiv = document.getElementById("garden");
 displayPlants(plants);
+
+// Filter buttons
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const category = btn.getAttribute("data-category");
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    if (category === "All") {
+      displayPlants(plants);
+    } else {
+      displayPlants(plants.filter(p => p.category === category));
+    }
+  });
+});
+
+// Close modal
+closeModal.onclick = () => { modal.style.display = "none"; }
+window.onclick = (e) => { if(e.target === modal) modal.style.display = "none"; }
+
+

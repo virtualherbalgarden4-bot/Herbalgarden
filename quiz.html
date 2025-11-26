@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz - Virtual Herbal Garden</title>
   <link rel="stylesheet" href="quiz.css">
-  <link rel="stylesheet" href="common.css">
+   <link rel="stylesheet" href="common.css">
+  
 </head>
-
 <body>
   <!-- Navbar -->
   <nav class="navbar">
@@ -27,17 +27,17 @@
     <p>Choose a quiz type below and test your herbal garden knowledge!</p>
 
     <div class="card-container">
-      <div class="card" onclick="showSection('mcq')">
+      <div class="card" onclick="openPage('mcq')">
         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="MCQ" />
         <h3>📝 Multiple Choice</h3>
         <p>Test your herbal knowledge with fun MCQs!</p>
       </div>
-      <div class="card" onclick="showSection('image')">
+      <div class="card" onclick="openPage('image')">
         <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Image Quiz" />
         <h3>🌿 Image Recognition</h3>
         <p>Identify herbs from their pictures.</p>
       </div>
-      <div class="card" onclick="showSection('jumbled')">
+      <div class="card" onclick="openPage('jumbled')">
         <img src="https://cdn-icons-png.flaticon.com/512/2702/2702061.png" alt="Jumbled Words" />
         <h3>🔤 Jumbled Words</h3>
         <p>Unscramble the plant names!</p>
@@ -45,52 +45,69 @@
     </div>
   </section>
 
-  <!-- Quiz Sections -->
+  <!-- MCQ Page -->
   <section id="mcq" class="page" style="display:none;">
-    <button class="back-btn" onclick="showSection('home')">⬅ Back</button>
+    <button class="back-btn" onclick="openPage('home')">⬅ Back</button>
     <h2>📝 Multiple Choice Quiz</h2>
     <div id="mcq-container"></div>
   </section>
 
+  <!-- Image Recognition Page -->
   <section id="image" class="page" style="display:none;">
-    <button class="back-btn" onclick="showSection('home')">⬅ Back</button>
+    <button class="back-btn" onclick="openPage('home')">⬅ Back</button>
     <h2>🌿 Identify the Plant</h2>
     <div id="image-quiz"></div>
   </section>
 
+  <!-- Jumbled Words Page -->
   <section id="jumbled" class="page" style="display:none;">
-    <button class="back-btn" onclick="showSection('home')">⬅ Back</button>
+    <button class="back-btn" onclick="openPage('home')">⬅ Back</button>
     <h2>🔤 Jumbled Words</h2>
     <div id="jumbled-quiz"></div>
   </section>
 
-  <!-- Chatbot -->
-  <div id="chatbot">
-    <button id="chat-toggle" aria-label="Open chat">💬</button>
-    <div id="chat-window" aria-hidden="true">
-      <div class="chat-header">
-        <div>
-          <strong>Herbal Assistant</strong>
-          <div class="chat-sub">Ask about plants, growth, or 3D models</div>
-        </div>
-        <button id="chat-close" aria-label="Close chat">✕</button>
-      </div>
-      <div id="chat-messages" role="log" aria-live="polite"></div>
-      <div class="chat-controls">
-        <input id="chat-input" type="text" placeholder="e.g. How to grow Tulsi? or list ayurveda plants" />
-        <button id="chat-send">Send</button>
-      </div>
-      <div class="chat-suggests" id="chat-suggests"></div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Virtual Herbal Garden | Learn and Play 🌿</p>
-  </footer>
-
   <!-- Scripts -->
   <script src="quiz.js"></script>
-  <script src="chatbot.js"></script>
+  <script>
+    // Page switching function
+    function openPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+      document.getElementById(pageId).style.display = 'block';
+
+      // Load quiz when opening
+      if (pageId === 'mcq') loadMCQ();
+      if (pageId === 'image') loadImageQuiz();
+      if (pageId === 'jumbled') loadJumbledQuiz();
+    }
+  </script>
+  <link rel="stylesheet" href="quiz.css">
+  <!-- ===== Local Chatbot (insert before </body>) ===== -->
+<div id="chatbot">
+  <button id="chat-toggle" aria-label="Open chat">💬</button>
+
+  <div id="chat-window" aria-hidden="true">
+    <div class="chat-header">
+      <div>
+        <strong>Herbal Assistant</strong>
+        <div class="chat-sub">Ask about plants, growth, or 3D models</div>
+      </div>
+      <button id="chat-close" aria-label="Close chat">✕</button>
+    </div>
+
+    <div id="chat-messages" role="log" aria-live="polite"></div>
+
+    <div class="chat-controls">
+      <input id="chat-input" type="text" placeholder="e.g. How to grow Tulsi? or list ayurveda plants" />
+      <button id="chat-send">Send</button>
+    </div>
+
+    <div class="chat-suggests" id="chat-suggests">
+      <!-- quick suggestion buttons inserted here -->
+    </div>
+  </div>
+</div>
+<!-- ===== end chatbot ===== -->
+<script src="chatbot.js"></script>
+<script src="quiz.js"></script>
 </body>
 </html>

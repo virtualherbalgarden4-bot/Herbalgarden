@@ -1,144 +1,90 @@
-/* ================== LEARN.CSS (updated) ================== */
-
-/* Use theme variables (falls back if common.css not loaded) */
-:root {
-  --green-dark: #2e7d32;
-  --green-mid: #43a047;
-  --bg: #f9fff9;
-  --card-bg: #ffffff;
-  --muted: #666;
-  --shadow: 0 6px 20px rgba(0,0,0,0.10);
-}
-
-/* ================== PAGE LAYOUT ================== */
-.learn-section {
-  padding: 36px 18px;
-  background: linear-gradient(180deg, var(--bg), #f1f8f6);
-  min-height: 80vh;
-}
-
-/* Header */
+/* ================== LEARN PAGE ================== */
 .learn-section h1 {
   text-align: center;
-  color: var(--green-dark);
+  color: #2e7d32;
   margin-bottom: 30px;
-  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1.05;
+  font-size: 2.5rem;
 }
-
-/* ================== SEARCH BAR ================== */
 .search-bar {
   text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
-
 .search-bar input {
-  width: min(680px, 60%);
-  padding: 12px 16px;
+  width: 60%;
+  padding: 12px;
   font-size: 1rem;
-  border: 2px solid var(--green-dark);
-  border-radius: 10px;
+  border: 2px solid #2e7d32;
+  border-radius: 8px;
   outline: none;
-  background: white;
-  transition: box-shadow 0.18s ease, border-color 0.18s ease;
 }
-
 .search-bar input:focus {
-  border-color: var(--green-mid);
-  box-shadow: 0 6px 18px rgba(67,160,71,0.12);
+  border-color: #1b5e20;
 }
-
-/* ================== PLANT GRID ================== */
 .plant-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
   max-width: 1200px;
-  margin: 0 auto;
-  align-items: start;
-  padding: 0 8px;
+  margin: auto;
 }
-
 .plant-card {
-  background: var(--card-bg);
-  padding: 22px;
-  border-radius: 14px;
-  box-shadow: var(--shadow);
-  transition: transform 0.32s cubic-bezier(.2,.9,.2,1), box-shadow 0.32s;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  cursor: pointer;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
-.plant-card:hover,
-.plant-card:focus-within {
+.plant-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
 }
-
-/* Card content */
 .plant-card h2 {
-  color: var(--green-dark);
-  margin: 6px 0 8px;
-  font-size: 1.05rem;
-  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 10px;
 }
 .plant-card p {
-  font-size: 0.98rem;
-  color: #333;
-  margin: 0;
-  line-height: 1.5;
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
 .plant-card strong {
-  color: var(--green-mid);
-  font-weight: 600;
+  color: #1b5e20;
 }
-
-/* Image */
 .plant-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 10px;
-  display: block;
+  border-radius: 12px;
+  margin-bottom: 15px;
 }
 
-/* ================== PLANT DETAIL VIEW ================== */
+/* Plant Details Section */
 #plantDetail {
   display: flex;
   flex-wrap: wrap;
-  background: var(--card-bg);
+  background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
-  gap: 28px;
-  margin: 32px auto 0;
-  max-width: 1100px;
-  animation: fadeIn 0.45s ease both;
-  align-items: flex-start;
+  gap: 30px;
+  animation: fadeIn 0.5s ease-in-out;
 }
-
-/* responsive image area */
 #plantDetail img {
   width: 100%;
-  max-width: 420px;
-  max-height: 360px;
+  max-width: 400px;
+  max-height: 350px;
   object-fit: cover;
-  border-radius: 14px;
-  flex: 0 0 420px;
+  border-radius: 15px;
 }
-
-/* text area */
 #plantDetail .details-text {
-  flex: 1 1 380px;
-  min-width: 240px;
+  flex: 1;
+  min-width: 250px;
 }
 #plantDetail h2 {
-  font-size: 1.75rem;
-  color: var(--green-mid);
-  margin-bottom: 12px;
-  font-weight: 800;
+  font-size: 2rem;
+  color: #1b5e20;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 #plantDetail p {
   font-size: 1rem;
@@ -147,89 +93,48 @@
   margin-bottom: 12px;
 }
 #plantDetail p strong {
-  color: var(--green-dark);
-  font-weight: 700;
+  color: #2e7d32;
+  font-weight: 600;
 }
-
-/* ================== BACK BUTTON ================== */
 #backBtn {
   display: block;
-  margin: 28px auto 0;
-  padding: 12px 26px;
-  background: var(--green-dark);
+  margin: 30px auto 0 auto;
+  padding: 12px 25px;
+  background: #2e7d32;
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s;
+  transition: all 0.3s ease-in-out;
 }
-#backBtn:hover,
-#backBtn:focus {
-  background: var(--green-mid);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+#backBtn:hover {
+  background: #1b5e20;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* ================== VIEW 3D BUTTON ================== */
+/* View 3D Button */
 #view3DBtn {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 12px 26px;
-  background: linear-gradient(135deg, var(--green-dark), #1b5e20);
+  display: block;
+  margin: 15px auto;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
   color: #fff;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: bold;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-#view3DBtn:hover,
-#view3DBtn:focus {
-  background: linear-gradient(135deg, #388e3c, var(--green-dark));
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+#view3DBtn:hover {
+  background: linear-gradient(135deg, #388e3c, #2e7d32);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 #view3DBtn:active {
-  transform: translateY(0) scale(0.99);
-}
-
-/* ================== UTILITY & ACCESSIBILITY ================== */
-.hidden { display: none !important; }
-.plant-card:focus { outline: none; box-shadow: 0 0 0 6px rgba(102,187,106,0.12); }
-#plantDetail:focus { outline: none; }
-
-/* ================== ANIMATIONS ================== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ================== RESPONSIVE ADJUSTMENTS ================== */
-@media (max-width: 900px) {
-  .plant-card img { height: 160px; }
-  #plantDetail { padding: 22px; gap: 18px; }
-  #plantDetail img { max-width: 360px; flex: 0 0 360px; }
-}
-/* Show only image + name in grid */
-.plant-card h2 {
-  font-size: 1.2rem;
-  color: #2e7d32;
-  margin-top: 12px;
-}
-.plant-card p {
-  display: none; /* hide grow/uses */
-}
-
-
-@media (max-width: 680px) {
-  .search-bar input { width: 88%; }
-  .plant-grid { grid-template-columns: 1fr; gap: 20px; }
-  #plantDetail { flex-direction: column; padding: 18px; }
-  #plantDetail img { max-width: 100%; flex: 0 0 auto; }
-  #plantDetail .details-text { width: 100%; }
-  #view3DBtn { width: 100%; text-align: center; }
-  #backBtn { width: 90%; }
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }

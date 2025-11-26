@@ -21,7 +21,7 @@ const plantsData = [
   { name:"Amla", image:"images/Amla.jpg", botanical:"Phyllanthus emblica", scientific:"Emblica officinalis", grow:"Prefers well-drained soil, full sunlight, regular care.", uses:"Rich in Vitamin C, boosts immunity, strengthens hair.", model:"models/Amla.glb" }
 ];
 
-// Render only image + name
+// Render plant cards dynamically
 function renderPlantCards() {
   plantGrid.innerHTML = "";
   plantsData.forEach((plant, index) => {
@@ -29,20 +29,24 @@ function renderPlantCards() {
     card.className = "plant-card";
     card.innerHTML = `
       <img src="${plant.image}" alt="${plant.name}">
+
       <h2>🌱 ${plant.name}</h2>
+      <p><strong>How to Grow:</strong> ${plant.grow}</p>
+      <p><strong>Uses:</strong> ${plant.uses}</p>
     `;
     card.addEventListener("click", () => showPlant(index));
     plantGrid.appendChild(card);
   });
 }
 
-// Show plant detail when clicked
+// Show plant detail
 function showPlant(index) {
   const plant = plantsData[index];
   plantDetail.innerHTML = `
     <img src="${plant.image}" alt="${plant.name}">
-    <div class="details-text">
+    <div class="plant-detail-content">
       <h2>🌱 ${plant.name}</h2>
+      
       <p><strong>Botanical Name:</strong> ${plant.botanical}</p>
       <p><strong>Scientific Name:</strong> ${plant.scientific}</p>
       <p><strong>How to Grow:</strong> ${plant.grow}</p>
@@ -96,6 +100,8 @@ searchInput.addEventListener("keyup", function() {
 // On load
 window.addEventListener("load", () => {
   renderPlantCards();
+
+  // Check hash for direct linking
   const hash = window.location.hash.slice(1).replace(/-/g, ' ');
   if (hash) {
     const index = plantsData.findIndex(p => p.name.toLowerCase() === hash.toLowerCase());
