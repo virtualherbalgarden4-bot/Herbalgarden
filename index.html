@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Herbal Garden</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2>🌿 Virtual Herbal Garden</h2>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="garden.html">Garden</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+    
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover the Healing Power of Nature</h1>
+      <p>Explore, Learn, and Experience the wonders of medicinal plants used in AYUSH practices.</p>
+      <a href="garden.html" class="btn">Explore Garden</a>
+    </div>
+  </section>
+
+  <!-- Highlights Section -->
+  <section class="highlights">
+    <div class="card">
+      <h3>🌱 Learn</h3>
+      <p>Understand how to grow and care for medicinal plants at home.</p>
+      <a href="learn.html" class="btn-small">Start Learning</a>
+    </div>
+    <div class="card">
+      <h3>🌿 Explore</h3>
+      <p>Browse through a collection of plants with detailed medicinal uses.</p>
+      <a href="garden.html" class="btn-small">Visit Garden</a>
+    </div>
+    <div class="card">
+      <h3>📝 Quiz</h3>
+      <p>Test your knowledge about herbs and traditional practices.</p>
+      <a href="quiz.html" class="btn-small">Take Quiz</a>
+    </div>
+  </section>
+
+  <!-- Local Chatbot -->
+  <div id="chatbot">
+    <button id="chat-toggle" aria-label="Open chat">💬</button>
+
+    <div id="chat-window" aria-hidden="true">
+      <div class="chat-header">
+        <div>
+          <strong>Herbal Assistant</strong>
+          <div class="chat-sub">Ask about plants, growth, or 3D models</div>
+        </div>
+        <button id="chat-close" aria-label="Close chat">✕</button>
+      </div>
+
+      <div id="chat-messages" role="log" aria-live="polite"></div>
+
+      <div class="chat-controls">
+        <input id="chat-input" type="text" placeholder="e.g. How to grow Tulsi? or list ayurveda plants" />
+        <button id="chat-send">Send</button>
+      </div>
+
+      <div class="chat-suggests" id="chat-suggests"></div>
+    </div>
+  </div>
+  
+
+  <!-- End Chatbot -->
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Virtual Herbal Garden | Built for AYUSH Learning 🌿</p>
+  </footer>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>

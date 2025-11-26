@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Tulsi (Holy Basil)",
+    "botanical": "Ocimum tenuiflorum",
+    "habitat": "Native to India, grows in tropical and subtropical regions",
+    "uses": "Boosts immunity, helps with cold & cough, reduces stress, improves digestion",
+    "cultivation": "Plant in well-drained soil, needs moderate sunlight, water regularly",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Ocimum_tenuiflorum2.jpg"
+  },
+  {
+    "name": "Aloe Vera",
+    "botanical": "Aloe barbadensis miller",
+    "habitat": "Grows in arid and semi-arid climates worldwide",
+    "uses": "Soothes skin burns, aids digestion, promotes wound healing, boosts hydration",
+    "cultivation": "Plant in sandy soil, requires full sun, water sparingly",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Aloe_vera_flower_inset.jpg"
+  },
+  {
+    "name": "Neem",
+    "botanical": "Azadirachta indica",
+    "habitat": "Native to India, thrives in tropical and subtropical climates",
+    "uses": "Antibacterial, antifungal, purifies blood, used in skincare and dental care",
+    "cultivation": "Prefers sunny locations, grows in well-drained soil with little maintenance",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Neem_leaves.jpg"
+  },
+  {
+    "name": "Ginger",
+    "botanical": "Zingiber officinale",
+    "habitat": "Native to Southeast Asia, prefers humid tropical climates",
+    "uses": "Aids digestion, relieves nausea, reduces inflammation, cures common cold",
+    "cultivation": "Plant rhizomes in moist soil, partial sunlight, water frequently",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Zingiber_officinale_-_Köhler–s_Medizinal-Pflanzen-145.jpg"
+  },
+  {
+    "name": "Ashwagandha",
+    "botanical": "Withania somnifera",
+    "habitat": "Native to India and North Africa, prefers dry climates",
+    "uses": "Boosts stamina, reduces stress, enhances memory, supports immunity",
+    "cultivation": "Requires sandy soil, dry climate, minimal water, plenty of sunlight",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Withania_somnifera_plant.jpg"
+  },
+  {
+    "name": "Turmeric",
+    "botanical": "Curcuma longa",
+    "habitat": "Native to South Asia, thrives in warm and wet regions",
+    "uses": "Anti-inflammatory, antioxidant, improves skin health, supports digestion",
+    "cultivation": "Plant rhizomes in rich, moist soil, needs partial sunlight",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Turmeric_root.jpg"
+  },
+  {
+    "name": "Peppermint",
+    "botanical": "Mentha × piperita",
+    "habitat": "Native to Europe and the Middle East, cultivated worldwide",
+    "uses": "Relieves headaches, aids digestion, freshens breath, reduces stress",
+    "cultivation": "Grows best in moist, shaded soil, needs regular watering",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Peppermint-Mentha_piperita-plant-leaves-IMG_5680-gradient.jpg"
+  },
+  {
+    "name": "Curry Leaves",
+    "botanical": "Murraya koenigii",
+    "habitat": "Native to India and Sri Lanka, grows in tropical regions",
+    "uses": "Rich in antioxidants, good for hair and skin, improves digestion",
+    "cultivation": "Needs well-drained soil, full sun, and regular watering",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Murraya_koenigii_002.JPG"
+  },
+  {
+    "name": "Hibiscus",
+    "botanical": "Hibiscus rosa-sinensis",
+    "habitat": "Native to Asia and Pacific islands, grows in warm regions",
+    "uses": "Used in hair care, lowers blood pressure, rich in antioxidants",
+    "cultivation": "Thrives in warm, sunny climates, requires regular watering",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Hibiscus_rosa-sinensis_flower_2.jpg"
+  },
+  {
+    "name": "Brahmi",
+    "botanical": "Bacopa monnieri",
+    "habitat": "Native to wetlands of India and Southeast Asia",
+    "uses": "Enhances memory, reduces anxiety, improves concentration",
+    "cultivation": "Grows in wet, marshy soil with full sunlight",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Bacopa_monnieri_W_IMG_1617.jpg"
+  }
+]

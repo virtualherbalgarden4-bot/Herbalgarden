@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garden | Virtual Herbal Garden</title>
+  <link rel="stylesheet" href="common.css" />
+  <link rel="stylesheet" href="garden.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2>🌿 Virtual Herbal Garden</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="garden.html" class="active">Garden</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+  </nav>
+
+  <!-- Filter Section -->
+  <section class="filter-bar" aria-label="Filter plants by category">
+    <button class="filter-btn active" data-category="All">All</button>
+    <button class="filter-btn" data-category="Ayurveda">Ayurveda</button>
+    <button class="filter-btn" data-category="Yoga">Yoga</button>
+    <button class="filter-btn" data-category="Unani">Unani</button>
+    <button class="filter-btn" data-category="Homeopathy">Homeopathy</button>
+    <button class="filter-btn" data-category="Siddha">Siddha</button>
+  </section>
+
+  <!-- Garden Grid -->
+  <main>
+    <section id="garden" aria-live="polite"></section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button id="closeModal" class="close" aria-label="Close modal">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Chatbot -->
+  <div id="chatbot">
+    <button id="chat-toggle" aria-label="Open chat">💬</button>
+    <div id="chat-window" aria-hidden="true">
+      <div class="chat-header">
+        <div>
+          <strong>Herbal Assistant</strong>
+          <div class="chat-sub">Ask about plants, growth, or 3D models</div>
+        </div>
+        <button id="chat-close" aria-label="Close chat">✕</button>
+      </div>
+
+      <div id="chat-messages" role="log" aria-live="polite"></div>
+
+      <div class="chat-controls">
+        <input
+          id="chat-input"
+          type="text"
+          placeholder="e.g. How to grow Tulsi? or list ayurveda plants"
+          aria-label="Chat input"
+        />
+        <button id="chat-send">Send</button>
+      </div>
+
+      <div class="chat-suggests" id="chat-suggests"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Virtual Herbal Garden | Explore Nature 🌱</p>
+  </footer>
+
+  <script src="garden.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

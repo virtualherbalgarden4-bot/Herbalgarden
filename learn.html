@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn | Virtual Herbal Garden</title>
+   <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="learn.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2>🌿 Virtual Herbal Garden</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="learn.html" class="active">Learn</a></li>
+      <li><a href="garden.html">Garden</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+  </nav>
+
+  <!-- Learn Section -->
+  <section class="learn-section">
+    <h1>Learn About Medicinal Plants</h1>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search plants or uses...">
+    </div>
+
+    <!-- Plant Grid -->
+    <div class="plant-grid" id="plantGrid">
+      <div class="plant-card">
+        <img src="images/tulsi.jpg" alt="Tulsi">
+        <h2>🌱 Tulsi</h2>
+      </div>
+      <div class="plant-card">
+        <img src="images/Aloevera.jpg" alt="Aloe Vera">
+        <h2>🌱 Aloe Vera</h2>
+      </div>
+      <div class="plant-card">
+        <img src="images/Neem.jpg" alt="Neem">
+        <h2>🌱 Neem</h2>
+      </div>
+      <div class="plant-card">
+        <img src="images/Ginger.webp" alt="Ginger">
+        <h2>🌱 Ginger</h2>
+      </div>
+      <div class="plant-card">
+        <img src="images/Turmeric.webp" alt="Turmeric">
+        <h2>🌱 Turmeric</h2>
+      </div>
+      <div class="plant-card">
+        <img src="images/Ashwa.jpg" alt="Ashwagandha">
+        <h2>🌱 Ashwagandha</h2>
+      </div>
+      <div class="plant-card">
+        <img src="images/Mint.jpg" alt="Mint">
+        <h2>🌱 Mint</h2>
+      </div>
+      <div class="plant-card">
+        <img src="images/Curryleaves.webp" alt="Curry Leaves">
+        <h2>🌱 Curry Leaves</h2>
+      </div>
+      <div class="plant-card">
+        <img src="images/Lemongrass.webp" alt="Lemongrass">
+        <h2>🌱 Lemongrass</h2>
+      </div>
+      <div class="plant-card">
+        <img src="images/Amla.jpg" alt="Amla">
+        <h2>🌱 Amla</h2>
+      </div>
+    </div>
+
+    <!-- Plant Detail View -->
+    <div id="plantDetail" class="plant-detail" style="display:none;"></div>
+    <button id="backBtn" class="back-btn" style="display:none;">← Back to Plants</button>
+
+    <!-- 3D Model Modal -->
+    <div id="modelModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+      <span id="closeModelModal" style="position:absolute; top:20px; right:30px; color:white; font-size:30px; cursor:pointer;">&times;</span>
+      <model-viewer id="modelViewer" src="" alt="3D Model" auto-rotate camera-controls style="width:80%; height:80%; border-radius:15px;"></model-viewer>
+    </div>
+  </section>
+  <!-- Local Chatbot insert before </body> -->
+<div id="chatbot">
+  <button id="chat-toggle" aria-label="Open chat">💬</button>
+
+  <div id="chat-window" aria-hidden="true">
+    <div class="chat-header">
+      <div>
+        <strong>Herbal Assistant</strong>
+        <div class="chat-sub">Ask about plants, growth, or 3D models</div>
+      </div>
+      <button id="chat-close" aria-label="Close chat">✕</button>
+    </div>
+
+    <div id="chat-messages" role="log" aria-live="polite"></div>
+
+    <div class="chat-controls">
+      <input id="chat-input" type="text" placeholder="e.g. How to grow Tulsi? or list ayurveda plants" />
+      <button id="chat-send">Send</button>
+    </div>
+
+    <div class="chat-suggests" id="chat-suggests">
+      <!-- quick suggestion buttons inserted here -->
+    </div>
+  </div>
+</div>
+<!-- ===== end chatbot ===== -->
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Virtual Herbal Garden | Built for AYUSH Learning 🌿</p>
+  </footer>
+
+  <script src="learn.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

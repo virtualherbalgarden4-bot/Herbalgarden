@@ -1,0 +1,235 @@
+/* ================== LEARN.CSS (updated) ================== */
+
+/* Use theme variables (falls back if common.css not loaded) */
+:root {
+  --green-dark: #2e7d32;
+  --green-mid: #43a047;
+  --bg: #f9fff9;
+  --card-bg: #ffffff;
+  --muted: #666;
+  --shadow: 0 6px 20px rgba(0,0,0,0.10);
+}
+
+/* ================== PAGE LAYOUT ================== */
+.learn-section {
+  padding: 36px 18px;
+  background: linear-gradient(180deg, var(--bg), #f1f8f6);
+  min-height: 80vh;
+}
+
+/* Header */
+.learn-section h1 {
+  text-align: center;
+  color: var(--green-dark);
+  margin-bottom: 30px;
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+/* ================== SEARCH BAR ================== */
+.search-bar {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.search-bar input {
+  width: min(680px, 60%);
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid var(--green-dark);
+  border-radius: 10px;
+  outline: none;
+  background: white;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.search-bar input:focus {
+  border-color: var(--green-mid);
+  box-shadow: 0 6px 18px rgba(67,160,71,0.12);
+}
+
+/* ================== PLANT GRID ================== */
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+  padding: 0 8px;
+}
+
+.plant-card {
+  background: var(--card-bg);
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.32s cubic-bezier(.2,.9,.2,1), box-shadow 0.32s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+.plant-card:hover,
+.plant-card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* Card content */
+.plant-card h2 {
+  color: var(--green-dark);
+  margin: 6px 0 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.plant-card p {
+  font-size: 0.98rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+.plant-card strong {
+  color: var(--green-mid);
+  font-weight: 600;
+}
+
+/* Image */
+.plant-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* ================== PLANT DETAIL VIEW ================== */
+#plantDetail {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  padding: 30px;
+  gap: 28px;
+  margin: 32px auto 0;
+  max-width: 1100px;
+  animation: fadeIn 0.45s ease both;
+  align-items: flex-start;
+}
+
+/* responsive image area */
+#plantDetail img {
+  width: 100%;
+  max-width: 420px;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex: 0 0 420px;
+}
+
+/* text area */
+#plantDetail .details-text {
+  flex: 1 1 380px;
+  min-width: 240px;
+}
+#plantDetail h2 {
+  font-size: 1.75rem;
+  color: var(--green-mid);
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+#plantDetail p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+#plantDetail p strong {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+/* ================== BACK BUTTON ================== */
+#backBtn {
+  display: block;
+  margin: 28px auto 0;
+  padding: 12px 26px;
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s;
+}
+#backBtn:hover,
+#backBtn:focus {
+  background: var(--green-mid);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+}
+
+/* ================== VIEW 3D BUTTON ================== */
+#view3DBtn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 26px;
+  background: linear-gradient(135deg, var(--green-dark), #1b5e20);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+#view3DBtn:hover,
+#view3DBtn:focus {
+  background: linear-gradient(135deg, #388e3c, var(--green-dark));
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+}
+#view3DBtn:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* ================== UTILITY & ACCESSIBILITY ================== */
+.hidden { display: none !important; }
+.plant-card:focus { outline: none; box-shadow: 0 0 0 6px rgba(102,187,106,0.12); }
+#plantDetail:focus { outline: none; }
+
+/* ================== ANIMATIONS ================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================== RESPONSIVE ADJUSTMENTS ================== */
+@media (max-width: 900px) {
+  .plant-card img { height: 160px; }
+  #plantDetail { padding: 22px; gap: 18px; }
+  #plantDetail img { max-width: 360px; flex: 0 0 360px; }
+}
+/* Show only image + name in grid */
+.plant-card h2 {
+  font-size: 1.2rem;
+  color: #2e7d32;
+  margin-top: 12px;
+}
+.plant-card p {
+  display: none; /* hide grow/uses */
+}
+
+
+@media (max-width: 680px) {
+  .search-bar input { width: 88%; }
+  .plant-grid { grid-template-columns: 1fr; gap: 20px; }
+  #plantDetail { flex-direction: column; padding: 18px; }
+  #plantDetail img { max-width: 100%; flex: 0 0 auto; }
+  #plantDetail .details-text { width: 100%; }
+  #view3DBtn { width: 100%; text-align: center; }
+  #backBtn { width: 90%; }
+}

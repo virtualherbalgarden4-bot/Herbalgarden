@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Virtual Herbal Garden</title>
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2>🌿 Virtual Herbal Garden</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="garden.html">Garden</a></li>
+      <li><a href="quiz.html" class="active">Quiz</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Page -->
+  <section id="home" class="page">
+    <h1>🌱 Play and Learn</h1>
+    <p>Choose a quiz type below and test your herbal garden knowledge!</p>
+
+    <div class="card-container">
+      <div class="card" onclick="showSection('mcq')">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="MCQ" />
+        <h3>📝 Multiple Choice</h3>
+        <p>Test your herbal knowledge with fun MCQs!</p>
+      </div>
+      <div class="card" onclick="showSection('image')">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Image Quiz" />
+        <h3>🌿 Image Recognition</h3>
+        <p>Identify herbs from their pictures.</p>
+      </div>
+      <div class="card" onclick="showSection('jumbled')">
+        <img src="https://cdn-icons-png.flaticon.com/512/2702/2702061.png" alt="Jumbled Words" />
+        <h3>🔤 Jumbled Words</h3>
+        <p>Unscramble the plant names!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz Sections -->
+  <section id="mcq" class="page" style="display:none;">
+    <button class="back-btn" onclick="showSection('home')">⬅ Back</button>
+    <h2>📝 Multiple Choice Quiz</h2>
+    <div id="mcq-container"></div>
+  </section>
+
+  <section id="image" class="page" style="display:none;">
+    <button class="back-btn" onclick="showSection('home')">⬅ Back</button>
+    <h2>🌿 Identify the Plant</h2>
+    <div id="image-quiz"></div>
+  </section>
+
+  <section id="jumbled" class="page" style="display:none;">
+    <button class="back-btn" onclick="showSection('home')">⬅ Back</button>
+    <h2>🔤 Jumbled Words</h2>
+    <div id="jumbled-quiz"></div>
+  </section>
+
+  <!-- Chatbot -->
+  <div id="chatbot">
+    <button id="chat-toggle" aria-label="Open chat">💬</button>
+    <div id="chat-window" aria-hidden="true">
+      <div class="chat-header">
+        <div>
+          <strong>Herbal Assistant</strong>
+          <div class="chat-sub">Ask about plants, growth, or 3D models</div>
+        </div>
+        <button id="chat-close" aria-label="Close chat">✕</button>
+      </div>
+      <div id="chat-messages" role="log" aria-live="polite"></div>
+      <div class="chat-controls">
+        <input id="chat-input" type="text" placeholder="e.g. How to grow Tulsi? or list ayurveda plants" />
+        <button id="chat-send">Send</button>
+      </div>
+      <div class="chat-suggests" id="chat-suggests"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Virtual Herbal Garden | Learn and Play 🌿</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="quiz.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>
